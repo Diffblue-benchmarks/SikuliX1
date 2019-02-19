@@ -5,30 +5,11 @@ public class Rect {
 
     public int x, y, width, height;
 
-    public Rect(int x, int y, int width, int height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-    }
-
-    public Rect() {
-        this(0, 0, 0, 0);
-    }
-
     public Rect(Point p1, Point p2) {
         x = (int) (p1.x < p2.x ? p1.x : p2.x);
         y = (int) (p1.y < p2.y ? p1.y : p2.y);
         width = (int) (p1.x > p2.x ? p1.x : p2.x) - x;
         height = (int) (p1.y > p2.y ? p1.y : p2.y) - y;
-    }
-
-    public Rect(Point p, Size s) {
-        this((int) p.x, (int) p.y, (int) s.width, (int) s.height);
-    }
-
-    public Rect(double[] vals) {
-        set(vals);
     }
 
     public void set(double[] vals) {
@@ -43,10 +24,6 @@ public class Rect {
             width = 0;
             height = 0;
         }
-    }
-
-    public Rect clone() {
-        return new Rect(x, y, width, height);
     }
 
     public Point tl() {

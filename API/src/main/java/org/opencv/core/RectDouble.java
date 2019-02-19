@@ -5,30 +5,11 @@ public class RectDouble {
 
     public double x, y, width, height;
 
-    public RectDouble(double x, double y, double width, double height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-    }
-
-    public RectDouble() {
-        this(0, 0, 0, 0);
-    }
-
     public RectDouble(Point p1, Point p2) {
         x = (double) (p1.x < p2.x ? p1.x : p2.x);
         y = (double) (p1.y < p2.y ? p1.y : p2.y);
         width = (double) (p1.x > p2.x ? p1.x : p2.x) - x;
         height = (double) (p1.y > p2.y ? p1.y : p2.y) - y;
-    }
-
-    public RectDouble(Point p, Size s) {
-        this((double) p.x, (double) p.y, (double) s.width, (double) s.height);
-    }
-
-    public RectDouble(double[] vals) {
-        set(vals);
     }
 
     public void set(double[] vals) {
@@ -43,10 +24,6 @@ public class RectDouble {
             width = 0;
             height = 0;
         }
-    }
-
-    public RectDouble clone() {
-        return new RectDouble(x, y, width, height);
     }
 
     public Point tl() {
