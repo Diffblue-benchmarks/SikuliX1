@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Results</title>
+  <style>
+    /* Standard styles */
+    body {
+      font-family: "Aial", sans-serif;
+      background-color: #EAF4F9;
+      color: black;
+      margin: 0;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: bold;
+    }
+    p,
+    a,
+    table,
+    ul {
+      font-size: 12pt;
+    }
+    h4 {
+      font-size: 12pt;
+    }
+    h3 {
+      font-size: 14pt;
+    }
+    h2 {
+      font-size: 16pt;
+    }
+    h1 {
+      font-size: 24px;
+    }
+    tt {
+      font-family: "Liberation Mono", monospace;
+    }
+    tt {
+      font-size: 10pt;
+    }
+    main {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    /* Table styling */
+    table {
+      width: 100%;
+      font-size: 12px;
+    }
+    table,
+    th,
+    td {
+      border-collapse: collapse;
+    }
+    th,
+    td {
+      padding: 5px;
+    }
+    th {
+      background: #B5DEF2;
+      font-size: 14px;
+      text-align: left;
+    }
+    td:first-child,
+    th:first-child {
+      border-right: 1px solid #36A9E0;
+    }
+    td:last-child,
+    th:last-child {
+      border-left: 1px solid #36A9E0;
+    }
+    td {
+      background: white;
+      padding: 8px 10px;
+    }
+    tr:not(:last-child) {
+      border-bottom: 1px solid #36A9E0;
+    }
+    /* Title wrapper */
+    .title-wrapper {
+      background: white;
+      padding: 5px 0;
+    }
+    .title-wrapper h1 {
+      max-width: 620px;
+      margin: 0 auto;
+      color: #0577BD;
+    }
+    .title-wrapper h1>span {
+      color: #0D3C62;
+    }
+    /* Status wrapper */
+    .status-wrapper {
+      margin-top: 10px;
+    }
+    .status-wrapper td {
+      background: none;
+    }
+    .status-wrapper a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    /* Status styles */
+    .failed {
+      background: #F1596B;
+      color: white;
+      font-weight: bold;
+    }
+    /* Traffic Lights */
+    [class^='circle'] {
+      width: 66px;
+      height: 66px;
+      border: 2px solid white;
+      border-radius: 100%;
+      color: white;
+      text-align: center;
+      font-size: 35px;
+      font-weight: bold;
+      line-height: 66px;
+    }
+    .circle__failed {
+      background: #F1596B;
+    }
+    .circle__failed:before {
+      content: '\002715'
+    }
+    .circle__warning {
+      background: #F6A623;
+    }
+    .circle__warning:before {
+      content: '\0021'
+    }
+    .circle__success {
+      background: #7ED321;
+    }
+    .circle__success:before {
+      content: '\002713'
+    }
+    .unsupported_dependency {
+        background-color: #F1596B;
+    }
+  </style>
+</head>
+<body>
+  <div class="title-wrapper">
+    <h1>Results from the script <span>'dbcheck'</span></h1>
+  </div>
+  <main>
+    <table style="border:hidden" class="status-wrapper">
+      <tr style="border:hidden">
+        <td style="border:hidden" width="66px">
+           <div class="circle__failed"></div>
+        </td>
+        <td style="border:hidden">System requirements are not met. See the table in section <a href="#system_requirements">Checking system requirements</a> below.</td>
+      </tr>
+    </table>
+<p>2019-02-15 14:48:18</p>    <h2 id="system_requirements">Checking system requirements</h2>
+    <table>
+    <col width="2">
+    <col width="1">
+    <col width="2">
+      <tr>
+        <th>Property</th>
+        <th style="text-align:center">Status</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td>Number of cores (>=4)</td>
+        <td align="center">OK</td>
+        <td>Detected 4 cores.</td>
+      </tr>
+      <tr>
+        <td>Available RAM (>=10.0GB)</td>
+        <td align="center">OK</td>
+        <td>Detected 15.4GB available.</td>
+      </tr>
+      <tr>
+        <td>Running on supported operating system</td>
+        <td align="center" class="failed">ALERT</td>
+        <td>Detected ubuntu v.18.4 which is not supported. Supported operating systems are ubuntu v.14.4, ubuntu v.16.4, ubuntu v.16.10, redhat v.7.2, redhat v.7.3, redhat v.7.4, centos v.7.2, centos v.7.3, centos v.7.4, debian v.9.0, debian v.9.1, debian v.9.2, debian v.9.3, debian v.9.4, debian v.9.5, debian v.9.6</td>
+      </tr>
+      <tr>
+        <td>Installed 'python' v.2.7.0 or later.</td>
+        <td align="center">OK</td>
+        <td>Detected 'python' v.2.7.15.</td>
+      </tr>
+      <tr>
+        <td>Installed 'docker' v.1.13.0 or later.</td>
+        <td align="center">OK</td>
+        <td>Detected 'docker' v.18.09.0.</td>
+      </tr>
+      <tr>
+        <td>Installed 'docker-compose' v.1.15.0 or later.</td>
+        <td align="center">OK</td>
+        <td>Detected 'docker-compose' v.1.23.2.</td>
+      </tr>
+      <tr>
+        <td>Installed 'javac' v.1.8.0 or later.</td>
+        <td align="center">OK</td>
+        <td>Detected 'javac' v.1.8.0.</td>
+      </tr>
+      <tr>
+        <td>Installed 'javap' v.1.8.0 or later.</td>
+        <td align="center">OK</td>
+        <td>Detected 'javap' v.1.8.0.</td>
+      </tr>
+    </table>
+    <h2 id="java_app_statistics">Java project statistics</h2>
+    <table>
+      <col width="340">
+      <col width="280">
+      <tr>
+        <th>Property</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Path to the checked Java application</td>
+        <td>.</td>
+      </tr>
+      <tr>
+        <td>Build system</td>
+        <td>Maven</td>
+      </tr>
+      <tr>
+        <td>Number of tests</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of test files</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Test framework(s)</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Number of lines of Java code</td>
+        <td>108635</td>
+      </tr>
+      <tr>
+        <td>Number of Java classes (excluding interfaces)</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of methods in all classes</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of synchronized methods in all classes</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of volatile elements in all classes</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of bytecodes in all methods</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of lambda uses in all methods</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of loops in all methods</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of synchronized blocks in all methods</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to java.util.concurrent classes (atomic / locks / thread / remaining)</td>
+        <td>0 / 0 / 0 / 0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to thread pool constructors (fixed / scheduled / fork_join)</td>
+        <td>0 / 0 / 0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to object synchronizers (wait / timed wait / notify / notifyAll)</td>
+        <td>0 / 0 / 0 / 0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to thread elements (start / sleep / interrupt / join)</td>
+        <td>0 / 0 / 0 / 0</td>
+      </tr>
+      <tr>
+        <td>Number of method calls within the Java application</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to the Java standard library</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to other Java libraries</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Total number of calls in the Java application</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to supported Java Standard Library functions</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Number of calls to unsupported Java Standard Library functions</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Estimated full analysis time (2 cores)</td>
+      <td>Unknown. Project uncompiled.</td>
+      </tr>
+    </table>
+    <h2 id="non_modelled_library_calls">Calls to unsupported library functions</h2>
+    <p>No calls to unsupported functions in the Java standard ibrary.</p>
+    <h2 id="other_library_calls">Other library classes used</h2>
+    <p>No calls to other libraries.</p>
+    <h2 id="java_app_statistics">Java version</h2>
+    <table>
+      <col width="340">
+      <col width="280">
+      <tr>
+        <th>Location</th>
+        <th>Version</th>
+      </tr>
+      <tr>
+        <td>SikuliX1</td>
+        <td>1.8</td>
+      </tr>
+      <tr>
+        <td>System Installed Java Version</td>
+        <td>1.8.0_191</td>
+      </tr>
+    </table>
+    <h2 id="java_app_statistics">Project dependencies</h2>
+    <table>
+      <col width="340">
+      <col width="280">
+      <tr>
+        <th>Dependency</th>
+        <th>Version</th>
+      </tr>
+      <tr>
+        <td>mac_widgets</td>
+        <td>0.9.5</td>
+      </tr>
+      <tr>
+        <td>jackson-annotations</td>
+        <td>2.9.0</td>
+      </tr>
+      <tr>
+        <td>jackson-core</td>
+        <td>2.9.8</td>
+      </tr>
+      <tr>
+        <td>jackson-databind</td>
+        <td>2.9.8</td>
+      </tr>
+      <tr>
+        <td>jai-imageio-core</td>
+        <td>1.4.0</td>
+      </tr>
+      <tr>
+        <td>json-simple</td>
+        <td>1.1.1</td>
+      </tr>
+      <tr>
+        <td>forms</td>
+        <td>1.2.1</td>
+      </tr>
+      <tr>
+        <td>itext</td>
+        <td>2.1.7</td>
+      </tr>
+      <tr>
+        <td>commons-beanutils</td>
+        <td>1.9.2</td>
+      </tr>
+      <tr>
+        <td>commons-cli</td>
+        <td>1.2</td>
+      </tr>
+      <tr>
+        <td>commons-collections</td>
+        <td>3.2.1</td>
+      </tr>
+      <tr>
+        <td>commons-io</td>
+        <td>2.6</td>
+      </tr>
+      <tr>
+        <td>commons-logging</td>
+        <td>1.2</td>
+      </tr>
+      <tr>
+        <td>commons-net</td>
+        <td>3.4</td>
+      </tr>
+      <tr>
+        <td>sikulix2tigervnc</td>
+        <td>2.0.0-SNAPSHOT</td>
+      </tr>
+      <tr>
+        <td>sikulixapi</td>
+        <td>1.1.4-SNAPSHOT</td>
+      </tr>
+      <tr>
+        <td>junit</td>
+        <td>4.10</td>
+      </tr>
+      <tr>
+        <td>log4j</td>
+        <td>1.2.17</td>
+      </tr>
+      <tr>
+        <td>jna</td>
+        <td>4.5.2</td>
+      </tr>
+      <tr>
+        <td>jna-platform</td>
+        <td>4.5.2</td>
+      </tr>
+      <tr>
+        <td>lept4j</td>
+        <td>1.9.4</td>
+      </tr>
+      <tr>
+        <td>tess4j</td>
+        <td>3.5.2</td>
+      </tr>
+      <tr>
+        <td>commons-exec</td>
+        <td>1.3</td>
+      </tr>
+      <tr>
+        <td>fontbox</td>
+        <td>2.0.11</td>
+      </tr>
+      <tr>
+        <td>jbig2-imageio</td>
+        <td>3.0.1</td>
+      </tr>
+      <tr>
+        <td>pdfbox-debugger</td>
+        <td>2.0.11</td>
+      </tr>
+      <tr>
+        <td>pdfbox</td>
+        <td>2.0.11</td>
+      </tr>
+      <tr>
+        <td>pdfbox-tools</td>
+        <td>2.0.11</td>
+      </tr>
+      <tr>
+        <td>xmlgraphics-commons</td>
+        <td>1.4</td>
+      </tr>
+      <tr>
+        <td>ghost4j</td>
+        <td>1.0.1</td>
+      </tr>
+      <tr>
+        <td>hamcrest-core</td>
+        <td>1.1</td>
+      </tr>
+      <tr>
+        <td>jboss-vfs</td>
+        <td>3.2.12.Final</td>
+      </tr>
+      <tr>
+        <td>jboss-logging</td>
+        <td>3.1.4.GA</td>
+      </tr>
+      <tr>
+        <td>jruby-complete</td>
+        <td>9.2.0.0</td>
+      </tr>
+      <tr>
+        <td>jython-standalone</td>
+        <td>2.7.1</td>
+      </tr>
+      <tr>
+        <td>jcl-over-slf4j</td>
+        <td>1.7.25</td>
+      </tr>
+      <tr>
+        <td>jul-to-slf4j</td>
+        <td>1.7.25</td>
+      </tr>
+      <tr>
+        <td>log4j-over-slf4j</td>
+        <td>1.7.25</td>
+      </tr>
+      <tr>
+        <td>slf4j-api</td>
+        <td>1.7.25</td>
+      </tr>
+      <tr>
+        <td>slf4j-nop</td>
+        <td>1.7.25</td>
+      </tr>
+      <tr>
+        <td>swing-layout</td>
+        <td>1.0.3</td>
+      </tr>
+      <tr>
+        <td>swingx-action</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>swingx-autocomplete</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>swingx-common</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>swingx-graphics</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>swingx-mavensupport</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>swingx-painters</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>swingx-plaf</td>
+        <td>1.6.5-1</td>
+      </tr>
+      <tr>
+        <td>logback-classic</td>
+        <td>jna</td>
+      </tr>
+    </table>
+    <h2 id="java_app_statistics">Project plugins</h2>
+    <table>
+      <col width="340">
+      <col width="280">
+      <tr>
+        <th>Plugin</th>
+        <th>Version</th>
+      </tr>
+      <tr>
+        <td>maven-antrun-plugin</td>
+        <td>1.3</td>
+      </tr>
+      <tr>
+        <td>maven-assembly-plugin</td>
+        <td>2.2-beta-5</td>
+      </tr>
+      <tr>
+        <td>maven-dependency-plugin</td>
+        <td>2.8</td>
+      </tr>
+      <tr>
+        <td>maven-release-plugin</td>
+        <td>2.3.2</td>
+      </tr>
+      <tr>
+        <td>maven-compiler-plugin</td>
+        <td>3.1</td>
+      </tr>
+      <tr>
+        <td>maven-clean-plugin</td>
+        <td>2.5</td>
+      </tr>
+      <tr>
+        <td>maven-install-plugin</td>
+        <td>2.4</td>
+      </tr>
+      <tr>
+        <td>maven-deploy-plugin</td>
+        <td>2.7</td>
+      </tr>
+      <tr>
+        <td>maven-site-plugin</td>
+        <td>3.3</td>
+      </tr>
+      <tr>
+        <td>maven-project-info-reports-plugin</td>
+        <td>Unknown</td>
+      </tr>
+      <tr>
+        <td>maven-jar-plugin</td>
+        <td>2.4</td>
+      </tr>
+      <tr>
+        <td>maven-assembly-plugin</td>
+        <td>2.4</td>
+      </tr>
+      <tr>
+        <td>maven-resources-plugin</td>
+        <td>2.6</td>
+      </tr>
+      <tr>
+        <td>maven-surefire-plugin</td>
+        <td>2.12.4</td>
+      </tr>
+    </table>
+  </main>
+</body>
+</html>

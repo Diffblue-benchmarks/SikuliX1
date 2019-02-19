@@ -1,42 +1,42 @@
 package org.opencv.core;
 
-//javadoc:Rect_
-public class Rect {
+//javadoc:RectDouble_
+public class RectDouble {
 
-    public int x, y, width, height;
+    public double x, y, width, height;
 
-    public Rect(int x, int y, int width, int height) {
+    public RectDouble(double x, double y, double width, double height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
     }
 
-    public Rect() {
+    public RectDouble() {
         this(0, 0, 0, 0);
     }
 
-    public Rect(Point p1, Point p2) {
-        x = (int) (p1.x < p2.x ? p1.x : p2.x);
-        y = (int) (p1.y < p2.y ? p1.y : p2.y);
-        width = (int) (p1.x > p2.x ? p1.x : p2.x) - x;
-        height = (int) (p1.y > p2.y ? p1.y : p2.y) - y;
+    public RectDouble(Point p1, Point p2) {
+        x = (double) (p1.x < p2.x ? p1.x : p2.x);
+        y = (double) (p1.y < p2.y ? p1.y : p2.y);
+        width = (double) (p1.x > p2.x ? p1.x : p2.x) - x;
+        height = (double) (p1.y > p2.y ? p1.y : p2.y) - y;
     }
 
-    public Rect(Point p, Size s) {
-        this((int) p.x, (int) p.y, (int) s.width, (int) s.height);
+    public RectDouble(Point p, Size s) {
+        this((double) p.x, (double) p.y, (double) s.width, (double) s.height);
     }
 
-    public Rect(double[] vals) {
+    public RectDouble(double[] vals) {
         set(vals);
     }
 
     public void set(double[] vals) {
         if (vals != null) {
-            x = vals.length > 0 ? (int) vals[0] : 0;
-            y = vals.length > 1 ? (int) vals[1] : 0;
-            width = vals.length > 2 ? (int) vals[2] : 0;
-            height = vals.length > 3 ? (int) vals[3] : 0;
+            x = vals.length > 0 ? (double) vals[0] : 0;
+            y = vals.length > 1 ? (double) vals[1] : 0;
+            width = vals.length > 2 ? (double) vals[2] : 0;
+            height = vals.length > 3 ? (double) vals[3] : 0;
         } else {
             x = 0;
             y = 0;
@@ -45,8 +45,8 @@ public class Rect {
         }
     }
 
-    public Rect clone() {
-        return new Rect(x, y, width, height);
+    public RectDouble clone() {
+        return new RectDouble(x, y, width, height);
     }
 
     public Point tl() {
@@ -73,10 +73,6 @@ public class Rect {
         return x <= p.x && p.x < x + width && y <= p.y && p.y < y + height;
     }
 
-    public boolean contains(PointInt p) {
-        return x <= p.x && p.x < x + width && y <= p.y && p.y < y + height;
-    }
-
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -96,8 +92,8 @@ public class Rect {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (!(obj instanceof Rect)) return false;
-        Rect it = (Rect) obj;
+        if (!(obj instanceof RectDouble)) return false;
+        RectDouble it = (RectDouble) obj;
         return x == it.x && y == it.y && width == it.width && height == it.height;
     }
 

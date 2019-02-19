@@ -1,6 +1,3 @@
-# Tested on Deeptest release 1.12.0
-cbmcArguments:
-  java-generate-no-comments: true
 units:
   - target:
     - dir: API/target/classes
