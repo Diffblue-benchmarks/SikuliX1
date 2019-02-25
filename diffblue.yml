@@ -1,29 +1,89 @@
-# Tested on Deeptest release 1.12.0
 cbmcArguments:
   java-generate-no-comments: true
-units:
-  - target:
-    - dir: API/target/classes
-      file: org/opencv/core/RectDouble.class
-      sourceDir: API/src/main/java
-      sourceFile: org/opencv/core/RectDouble.java
-  - target:
-    - dir: API/target/classes
-      file: org/opencv/core/Rect.class
-      sourceDir: API/src/main/java
-      sourceFile: org/opencv/core/Rect.java
-  - target:
-    - dir: API/target/classes
-      file: org/opencv/core/Point.class
-      sourceDir: API/src/main/java
-      sourceFile: org/opencv/core/Point.java
-  - target:
-    - dir: API/target/classes
-      file: org/opencv/core/PointInt.class
-      sourceDir: API/src/main/java
-      sourceFile: org/opencv/core/PointInt.java
-  - target:
-    - dir: API/target/classes
-      file: org/opencv/core/Size.class
-      sourceDir: API/src/main/java
-      sourceFile: org/opencv/core/Size.java
+  no-trivial-tests: true
+phases:
+  - cbmcArguments:
+      do-not-test-methods-with-access: &cbmcarguments_-_do-not-test-methods-with-access
+        - private
+      java-assume-inputs-non-null: true
+      java-test-input-factory-bmc-max-mutators: 10
+      java-test-input-factory-bmc-recursion-limit: 10
+      java-test-input-factory-entry-point: (.*)
+      java-test-output-entry-point: (.*)
+      max-nondet-array-length: 2
+      max-nondet-tree-depth: 1
+      refine: true
+      string-input-value:
+        - sample
+        - SAMPLE
+        - 'the quick brown fox'
+      unwind: 1
+    timeout: 60
+  - cbmcArguments:
+      do-not-test-methods-with-access: *cbmcarguments_-_do-not-test-methods-with-access
+      java-assume-inputs-non-null: true
+      java-test-input-factory-bmc-max-mutators: 10
+      java-test-input-factory-bmc-recursion-limit: 10
+      java-test-input-factory-entry-point: (.*)
+      java-test-output-entry-point: (.*)
+      max-nondet-array-length: 2
+      max-nondet-string-length: 8
+      max-nondet-tree-depth: 1
+      refine: true
+      string-non-empty: true
+      string-printable: true
+      unwind: 2
+    timeout: 60
+  - cbmcArguments:
+      do-not-test-methods-with-access: *cbmcarguments_-_do-not-test-methods-with-access
+      java-assume-inputs-non-null: true
+      java-test-input-factory-bmc-max-mutators: 10
+      java-test-input-factory-bmc-recursion-limit: 10
+      java-test-input-factory-entry-point: (.*)
+      java-test-output-entry-point: (.*)
+      max-nondet-array-length: 6
+      max-nondet-string-length: 8
+      max-nondet-tree-depth: 2
+      refine: true
+      string-non-empty: true
+      string-printable: true
+      unwind: 5
+    timeout: 60
+  - cbmcArguments:
+      do-not-test-methods-with-access: &cbmcarguments_-_do-not-test-methods-with-access
+        - private
+      java-assume-inputs-non-null: true
+      java-test-input-factory-bmc-max-mutators: 6
+      java-test-input-factory-bmc-recursion-limit: 6
+      java-test-input-factory-entry-point: &cbmcarguments_-_java-test-input-factory-entry-point
+        - <init>
+        - set.*
+        - add.*
+      java-test-output-entry-point: &cbmcarguments_-_java-test-output-entry-point
+        - get.*
+        - is.*
+        - has.*
+      max-nondet-array-length: 12
+      max-nondet-string-length: 16
+      max-nondet-tree-depth: 3
+      refine: true
+      string-printable: true
+      unwind: 10
+    timeout: 60
+  - cbmcArguments:
+      do-not-test-methods-with-access: *cbmcarguments_-_do-not-test-methods-with-access
+      java-assume-inputs-non-null: true
+      java-test-input-factory-bmc-max-mutators: 6
+      java-test-input-factory-bmc-recursion-limit: 6
+      java-test-input-factory-entry-point: *cbmcarguments_-_java-test-input-factory-entry-point
+      java-test-output-entry-point: *cbmcarguments_-_java-test-output-entry-point
+      max-nondet-array-length: 12
+      max-nondet-string-length: 100
+      max-nondet-tree-depth: 3
+      refine: true
+      string-printable: true
+      unwind: 100
+    timeout: 60
+  - cbmcArguments:
+      unwind: 100
+    timeout: 60
