@@ -3,8 +3,7 @@ cbmcArguments:
   no-trivial-tests: true
 phases:
   - cbmcArguments:
-      do-not-test-methods-with-access: &cbmcarguments_-_do-not-test-methods-with-access
-        - private
+      do-not-test-methods-with-access: ["private"]
       java-assume-inputs-non-null: true
       java-test-input-factory-bmc-max-mutators: 10
       java-test-input-factory-bmc-recursion-limit: 10
